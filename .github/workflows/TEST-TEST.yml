@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - test
+  workflow_dispatch:
+
+jobs:
+  spring:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+  default_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+
+### Note:
+# The Bamboo polling trigger logic is replaced with GitHub's push trigger.
+# Bamboo branch management and integration strategy are not directly translatable.
+# Manual branch creation and deletion settings need to be managed outside this YAML.
+# Permissions and plan-level settings in Bamboo do not have direct equivalents in GitHub Actions.
